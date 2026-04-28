@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branches | MasterMods PC</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-microchip"></i>
+                    <div class="logo-text">
+                        <h1>MasterMods PC</h1>
+                        <p>Pro Modding & Repair</p>
+                    </div>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav class="nav-desktop" id="navDesktop">
+                    <a href="index.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="branches.html">Branches</a>
+                    <a href="index.html#about">About</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                <div class="header-actions">
+                    <a href="track-booking.html" class="btn btn-outline">Track Booking</a>
+                    <a href="index.html#request" class="btn btn-primary">Book Service</a>
+                </div>
+            </div>
+            <nav class="nav-mobile" id="navMobile">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="branches.html">Branches</a>
+                <a href="index.html#about">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="track-booking.html">Track Booking</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="booking-section" id="branch-map-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Branch Map</h2>
+                <p>Interactive branch map. Click any marker to open its location in Google Maps.</p>
+            </div>
+            <div class="map-card">
+                <div id="branchMapInteractive"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY US -->
+<section class="services-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Why Choose Our Branch Network</h2>
+            <p>Consistent service quality, no matter which branch you visit.</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-location-dot"></i>
+                <h3>Strategically Located</h3>
+                <p>Branches positioned in key cities for faster access and support.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-clock"></i>
+                <h3>Efficient Turnaround</h3>
+                <p>Streamlined diagnostics and repair workflow for quicker service.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-shield-halved"></i>
+                <h3>Standardized Quality</h3>
+                <p>All branches follow the same professional repair procedures.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="services-section" id="branch-list-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Branch Locations</h2>
+                <p>Visit the nearest MasterMods PC branch nationwide. Every branch card links directly to maps.</p>
+            </div>
+            <div class="branch-grid" id="branchesList"></div>
+        </div>
+    </section>
+
+    <!-- BEFORE VISIT -->
+<section class="services-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Before You Visit</h2>
+            <p>Prepare these to ensure faster and smoother service.</p>
+        </div>
+
+        <div class="services-grid">
+
+            <div class="service-card">
+                <i class="fas fa-id-card"></i>
+                <h3>Bring Device Details</h3>
+                <p>Include model, symptoms, and repair history if available.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-plug"></i>
+                <h3>Backup Important Files</h3>
+                <p>Recommended before formatting, repair, or OS installation.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-receipt"></i>
+                <h3>Prepare Service Request</h3>
+                <p>Helps speed up diagnosis and reduces waiting time.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <div class="scroll-jump" id="scrollJump">
+        <label for="scrollJumpSelect">Quick Jump</label>
+        <select id="scrollJumpSelect" class="scroll-jump-select">
+            <option value="">Choose section</option>
+            <option value="#branch-map-section">Interactive Map</option>
+            <option value="#branch-list-section">Branch List</option>
+            <option value="#footer">Footer</option>
+        </select>
+    </div>
+
+    <footer class="footer" id="footer">
+        <div class="container">
+            <p>&copy; 2026 MasterMods PC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="script.js"></script>
+</body>
+</html>

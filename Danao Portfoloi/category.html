@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kitchen Categories</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        body { 
+        font-family: 'Segoe UI', Arial; 
+        text-align: center; 
+        background-color: #f4f7f6; 
+        margin: 0; 
+    }
+
+        .navbar { 
+            background-color: #2c3e50;
+            padding: 15px; 
+        }
+
+        .navbar a { 
+            color: white; 
+            margin: 0 15px; 
+            text-decoration: none; 
+        }
+
+        .container { 
+            display: flex; 
+            justify-content: center; 
+            gap: 20px; 
+            padding: 50px; 
+        }
+
+        .card { 
+            background: white; 
+            border-radius: 15px; 
+            overflow: hidden; width: 280px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+            border-top: 8px solid #e67e22; 
+            padding-top: 25px;
+        }
+
+        .card h2 { color: #2c3e50; margin-top: 10px; }
+        
+        .card i { font-size: 3rem; margin-top: 10px; }
+        .icon-orange { color: #e67e22; }
+        .icon-blue { color: #3498db; }
+        .icon-green { color: #27ae60; }
+
+        .view-btn { 
+            display: block; 
+            padding: 15px; 
+            background: #2c3e50; 
+            color: white; 
+            text-decoration: none; 
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="index page.html"><i class="fas fa-home"></i> Home</a> 
+        <a href="category.html"><i class="fas fa-th-list"></i> Categories</a>
+    </div>
+
+    <h1 style="margin-top:40px; color:#2c3e50;">Select a Collection</h1>
+
+    <div class="container">
+
+        <div class="card">
+            <i class="fas fa-icicles icon-orange"></i>
+            <h2>Refrigerators</h2>
+            <p>Keep it cool with style.</p>
+            <a href="gallery.html" class="view-btn">View Sale</a>
+        </div>
+
+        <div class="card" style="border-top-color: #3498db;">
+            <i class="fas fa-fire-alt icon-blue"></i>
+            <h2>Cooking</h2>
+            <p>Professional grade ovens.</p>
+            <p style="color:gray;">New Stock Soon</p>
+        </div>
+
+        <div class="card" style="border-top-color: #27ae60;">
+            <i class="fas fa-faucet icon-green"></i>
+            <h2>Cleaning</h2>
+            <p>Smart dishwashers.</p>
+            <p style="color:gray;">New Stock Soon</p>
+        </div>
+
+    </div>
+</body>
+</html>

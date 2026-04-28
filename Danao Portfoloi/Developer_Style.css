@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-image: url('https://i.redd.it/all-the-wallpapers-from-nod-krai-concept-overview-web-event-v0-vpbxbb3k2kef1.jpg?width=3840&format=pjpg&auto=webp&s=9e2bbf262551565c0fa1d5c8fc49655d264020a1');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.65);
+    border-radius: 12px;
+    color: #ffffff;
+}
+
+.top-section {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #C0C0C0;
+}
+
+.name-title h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.title {
+    margin: 5px 0 0;
+    color: #C0C0C0;
+    font-size: 1.1rem;
+}
+
+h2 {
+    border-bottom: 1px solid #555;
+    padding-bottom: 5px;
+    color: #ffffff;
+}

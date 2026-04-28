@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Your Booking - MasterMods PC</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- LOGIN VIEW -->
+<div id="loginView" class="portal-login">
+    <div class="login-card">
+        <div class="login-icon">
+            <i class="fas fa-search"></i>
+        </div>
+
+        <h2>Track Your Service Request</h2>
+        <p>
+            Enter the email you used during booking to view your repair status,
+            technician updates, and service history.
+        </p>
+
+        <form id="portalLoginForm">
+            <div class="form-group">
+                <label for="customerEmail">Email Address</label>
+                <input type="email" id="customerEmail" placeholder="your@email.com" required>
+                <p style="font-size: 0.875rem; color: var(--text-muted); margin-top: 0.5rem;">
+                    ⚠️ Must match the email used in your service request
+                </p>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-lg">
+                View My Bookings
+            </button>
+        </form>
+
+        <div style="text-align: center; margin-top: 1.5rem;">
+            <a href="index.html" class="btn btn-outline">Back to Home</a>
+        </div>
+    </div>
+</div>
+
+<!-- PORTAL VIEW -->
+<div id="portalView" style="display: none;">
+
+    <!-- HEADER -->
+    <header class="portal-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-box"></i>
+                    <div class="logo-text">
+                        <h1>My Service Dashboard</h1>
+                        <p id="customerEmailDisplay"></p>
+                    </div>
+                </div>
+
+                <div class="header-actions">
+                    <a href="index.html" class="btn btn-outline">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SERVICE REQUESTS (TOP PRIORITY) -->
+    <section style="padding: 3rem 0;">
+        <div class="container">
+
+            <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">
+                Your Service Requests
+            </h2>
+
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                This section shows all your submitted repair requests and their current progress status.
+                Updates are handled by our technicians in real time.
+            </p>
+
+            <div id="bookingsList" class="booking-cards"></div>
+
+            <div id="noBookings" style="display: none; text-align: center; padding: 3rem;">
+                <i class="fas fa-inbox" style="font-size: 4rem; color: var(--text-muted); margin-bottom: 1rem;"></i>
+
+                <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">
+                    No service requests found
+                </h3>
+
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                    You haven’t submitted any repair or service requests yet.
+                    Once you book a service, it will appear here automatically.
+                </p>
+
+                <a href="index.html#request" class="btn btn-primary btn-lg">
+                    Book a Service Now
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section style="padding: 2rem 0; background: var(--surface-soft);">
+        <div class="container">
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <h3>Total Requests</h3>
+                    <div class="stat-value" id="totalBookings">0</div>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">All-time submissions</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>In Progress</h3>
+                    <div class="stat-value" style="color: var(--warning);" id="pendingBookings">0</div>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Currently being processed</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Completed</h3>
+                    <div class="stat-value" style="color: var(--success);" id="completedBookings">0</div>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Successfully finished services</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TRACKING GUIDE -->
+    <section style="padding: 3rem 0;">
+        <div class="container">
+
+            <div class="help-card">
+                <h3>How Your Tracking Works</h3>
+                <p style="opacity: 0.9; margin-bottom: 1rem;">
+                    Each service request goes through a structured repair workflow:
+                </p>
+
+                <div class="help-info">
+                    <div class="help-item">
+                        <i class="fas fa-circle-info"></i>
+                        <span>Request is received and logged into the system</span>
+                    </div>
+                    <div class="help-item">
+                        <i class="fas fa-user-cog"></i>
+                        <span>Technician is assigned for diagnosis</span>
+                    </div>
+                    <div class="help-item">
+                        <i class="fas fa-screwdriver-wrench"></i>
+                        <span>Repair or service is performed</span>
+                    </div>
+                    <div class="help-item">
+                        <i class="fas fa-circle-check"></i>
+                        <span>Service is completed and marked for release</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- HELP -->
+    <section style="padding: 2rem 0;">
+        <div class="container">
+
+            <div class="help-card">
+                <h3>Need Assistance?</h3>
+                <p style="opacity: 0.9; margin-bottom: 1rem;">
+                    If something doesn’t look updated or you need support regarding your repair:
+                </p>
+
+                <div class="help-info">
+                    <div class="help-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+63 917 845 2210</span>
+                    </div>
+                    <div class="help-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>hello@mastermods.com</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MODAL -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content" style="max-width: 600px;">
+            <span class="modal-close">&times;</span>
+            <h2 id="modalTitle">Booking Details</h2>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- TOAST -->
+    <div id="toast" class="toast"></div>
+
+    <!-- FACEBOOK PAGE -->
+    <footer class="footer">
+        <div class="container">
+
+            <p>&copy; 2026 MasterMods PC. All rights reserved.</p>
+
+            <p style="margin-top: 0.5rem;">
+                <a href="https://www.facebook.com/profile.php?id=61572039492470"
+                   target="_blank"
+                   class="footer-link">
+                    <i class="fab fa-facebook"></i> Follow us on Facebook for updates
+                </a>
+            </p>
+
+        </div>
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+<script src="track-booking.js"></script>
+
+</body>
+</html>

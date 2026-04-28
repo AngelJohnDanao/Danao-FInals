@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UE Enrollment Form - Semester Project</title>
+    <style>
+        :root {
+            --ue-red: #800000;
+            --line-color: #000;
+            --bg-canvas: #e9e9e9;
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Times New Roman', serif;
+            background-color: var(--bg-canvas);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .form-page {
+            background-color: #fff;
+            width: 8.5in;
+            min-height: 11in;
+            margin: 0 auto;
+            padding: 0.5in;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        .header-wrapper {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-container {
+            flex: 0 0 120px;
+        }
+
+        .logo-circle {
+            width: 100px;
+            height: 100px;
+            border: 2px solid var(--line-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .logo-circle img {
+            width: 85%;
+            object-fit: contain;
+        }
+
+        .header-text {
+            flex: 1;
+            text-align: center;
+            margin-right: 120px; 
+        }
+
+        .header-text h1 { margin: 0; font-size: 1.4rem; text-transform: uppercase; }
+        .header-text h2 { margin: 0; font-size: 1rem; font-weight: normal; }
+        .header-text h3 { margin: 10px 0 0; font-size: 1.6rem; text-decoration: underline; }
+
+        .top-right-fields {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-top: -40px;
+            font-size: 0.9rem;
+        }
+
+        .row { display: flex; gap: 15px; margin-bottom: 12px; align-items: flex-end; }
+        .col { flex: 1; display: flex; flex-direction: column; }
+        
+        label { font-size: 0.8rem; font-weight: bold; margin-bottom: 2px; }
+        .sub-label { font-size: 0.65rem; text-transform: uppercase; border-top: 1px solid black; padding-top: 2px; text-align: center; }
+
+        input[type="text"], input[type="tel"], input[type="email"] {
+            border: none;
+            border-bottom: 1px solid var(--line-color);
+            padding: 2px 0;
+            width: 100%;
+            outline: none;
+            background: transparent;
+        }
+
+        section { margin-top: 20px; }
+        .section-title { font-weight: bold; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 10px; }
+
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+
+        .status-box { font-size: 0.8rem; }
+        .checkbox-row { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 4px; }
+
+        .submit-btn {
+            display: block;
+            margin: 40px auto 0;
+            padding: 10px 40px;
+            background: var(--ue-red);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-page">
+    <div class="header-wrapper">
+        <div class="logo-container">
+            <div class="logo-circle">
+                <img src="https://www.ue.edu.ph/mla/wp-content/uploads/2020/12/UE_RED_SEAL_09.png" alt="Logo">
+            </div>
+        </div>
+        <div class="header-text">
+            <h1>Sample University</h1>
+            <h2>ENROLLMENT SYSTEM</h2>
+            <h3>PERSONAL DATA SHEET</h3>
+            <p style="font-size: 0.8rem; font-style: italic; margin: 5px 0;">(Graduate School, Law, Medicine)</p>
+        </div>
+    </div>
+
+    <div class="top-right-fields">
+        <div>Program: <input type="text" style="width: 150px;"></div>
+        <div style="margin-top: 5px;">Student #: <input type="text" style="width: 150px;"></div>
+    </div>
+
+    <form>
+        <div class="row" style="margin-top: 30px;">
+            <div class="col"><input type="text"><div class="sub-label">Surname</div></div>
+            <div class="col"><input type="text"><div class="sub-label">Given Name</div></div>
+            <div class="col"><input type="text"><div class="sub-label">Middle Name</div></div>
+            <div class="col" style="flex: 0.6;"><input type="text"><div class="sub-label">Auxiliary Name</div></div>
+        </div>
+
+        <section>
+            <div class="section-title">Student Details:</div>
+            <div class="row"><label>City Address:</label><input type="text"></div>
+            <div class="row">
+                <div class="col" style="flex: 0.3;"><label>Zip Code:</label><input type="text"></div>
+                <div class="col"><label>Tel. No.:</label><input type="tel"></div>
+                <div class="col"><label>E-mail Address:</label><input type="email"></div>
+            </div>
+
+            <div class="grid-2" style="margin-top: 15px;">
+                <div class="status-box">
+                    <p><strong>Legal Status:</strong></p>
+                    <div class="checkbox-row"><input type="checkbox"> Citizen of RP</div>
+                    <div class="checkbox-row"><input type="checkbox"> Permanent Resident</div>
+                    <div class="checkbox-row"><input type="checkbox"> Student Visa Holder</div>
+                    <div class="checkbox-row"><input type="checkbox"> Other Visa</div>
+                </div>
+                <div class="status-box">
+                    <p><strong>Civil Status:</strong></p>
+                    <div class="checkbox-row"><input type="checkbox"> Single</div>
+                    <div class="checkbox-row"><input type="checkbox"> Married</div>
+                    <div class="checkbox-row"><input type="checkbox"> Separated</div>
+                    <div class="row" style="margin-top: 10px;">
+                        <label>Working?</label><input type="checkbox">
+                        <label>Office Tel:</label><input type="tel" style="width: 100px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="grid-2">
+            <section>
+                <div class="section-title">Father's Information:</div>
+                <div class="row"><label>Surname:</label><input type="text"></div>
+                <div class="row"><label>First Name:</label><input type="text"></div>
+                <div class="row"><label>Occupation:</label><input type="text"></div>
+            </section>
+            <section>
+                <div class="section-title">Mother's Information:</div>
+                <div class="row"><label>Surname:</label><input type="text"></div>
+                <div class="row"><label>First Name:</label><input type="text"></div>
+                <div class="row"><label>Occupation:</label><input type="text"></div>
+            </section>
+        </div>
+
+        <section>
+            <div class="section-title">Guardian's Information: (If Applicable)</div>
+            <div class="grid-2">
+                <div>
+                    <div class="row"><label>Name:</label><input type="text"></div>
+                    <div class="row"><label>Relation:</label><input type="text"></div>
+                </div>
+                <div>
+                    <div class="row"><label>Guardian Address:</label><input type="text"></div>
+                    <div class="row"><label>Tel #:</label><input type="tel"></div>
+                </div>
+            </div>
+        </section>
+
+        <button type="submit" class="submit-btn no-print">Submit Enrollment</button>
+    </form>
+</div>
+
+</body>
+</html>

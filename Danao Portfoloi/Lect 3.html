@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS3 Lecture Notes</title>
+    <style>
+        /* CSS SYNTAX 
+        - Selector: points to the HTML element.
+        - Declaration: contains Property and Value.
+        - Each declaration ends with a semicolon; blocks use curly braces.
+        */
+
+        /* 1. ELEMENT SELECTOR */
+        /* Selects all elements by their tag name. */
+        p {
+            text-align: center; 
+            color: red;         /*       */
+        }
+
+        /* 2. ID SELECTOR */
+        /* Uses #, must be unique per page, higher priority than class/element. */
+        #para1 {
+            text-align: center; 
+            color: blue;        
+        }
+
+        /* 3. CLASS SELECTOR */
+        /* Uses a period (.), can be used multiple times. */
+        .center {
+            text-align: right; 
+            color: red;        
+        }
+
+        /* 4. GROUPING SELECTORS */
+        /* Use commas to apply the same style to multiple elements. */
+        h1, h2, div {
+            text-align: center; 
+            color: navy;        
+        }
+
+        /* CSS COMMENTS */
+        /* - Browsers ignore them.
+           - Syntax: /* Comment here */ 
+           */
+
+        /* 5. BACKGROUND SHORTHAND  */
+        /* Order: color, image, repeat, position. */
+        .bg-example {
+            background: #lightgrey url("img_tree.png") no-repeat right top; 
+            background-attachment: fixed; 
+
+        /* 6. BORDERS & RADIUS  */
+        .border-demo {
+            border: 5px solid red; /* Shorthand: width, style (required), color*/
+            border-radius: 15px;   /* Makes corners rounded*/
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="color:blue; margin-left:30px;">This is an Inline Styled Heading</h1> <p id="para1">This paragraph uses an ID selector.</p> <h2 class="center">This heading uses a CLASS selector.</h2> <div class="border-demo">
+        This box has a shorthand border and rounded corners.
+    </div>
+
+    <div style="background-color: rgba(255, 0, 0, 0.5);">
+        This has a 50% transparent red background using RGBA. </div>
+
+    <div style="width: 50%; max-width: 300px; border: 1px solid black;">
+        This box is 50% wide but will never exceed 300px. </div>
+
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Portfolio</title>
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #0f3460;
+            --accent-light: #e94560;
+            --light: #f8f9fa;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --shadow-hover: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 50%, #16213e 100%);
+            color: var(--primary);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(15, 52, 96, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(233, 69, 96, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        /* Top Section: Photo and Intro */
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,249,250,0.92) 100%);
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 50px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .profile-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #00d4ff 0%, #e94560 100%);
+        }
+
+        .profile-header:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .profile-img {
+            width: 220px;
+            height: 220px;
+            border-radius: 15px;
+            object-fit: cover;
+            border: 5px solid var(--accent);
+            box-shadow: 0 10px 25px rgba(15, 52, 96, 0.2);
+            flex-shrink: 0;
+        }
+
+        .intro-text {
+            flex: 1;
+        }
+
+        .intro-text h1 {
+            margin: 0 0 8px 0;
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00d4ff 0%, #e94560 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+
+        .intro-text .grade {
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* Expandable Box Section */
+        .works-dropdown {
+            background: linear-gradient(135deg, rgba(255,255,255,0.93) 0%, rgba(248,249,250,0.90) 100%);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .works-button {
+            width: 100%;
+            padding: 25px 30px;
+            background: linear-gradient(135deg, var(--accent) 0%, #0f3460 100%);
+            color: var(--white);
+            border: none;
+            font-size: 1.3rem;
+            cursor: pointer;
+            text-align: center;
+            font-weight: 700;
+            transition: all 0.4s ease;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .works-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .works-button:hover {
+            background: linear-gradient(135deg, var(--accent-light) 0%, #d63447 100%);
+            box-shadow: 0 8px 20px rgba(233, 69, 96, 0.3);
+            letter-spacing: 1px;
+        }
+
+        .works-button:hover::before {
+            left: 100%;
+        }
+
+        .content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 0 30px;
+        }
+
+        .content.active {
+            max-height: 2000px;
+            padding: 40px 30px;
+        }
+
+        .term-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin-top: 0;
+        }
+
+        .term-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(248,249,250,0.85) 100%);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 6px solid var(--accent);
+            transition: all 0.3s ease;
+            border-top: 1px solid rgba(255,255,255,0.5);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .term-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(15, 52, 96, 0.15);
+            border-left-color: var(--accent-light);
+        }
+
+        .term-card h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: var(--accent);
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-transform: capitalize;
+            letter-spacing: 0.5px;
+        }
+
+        .term-card a {
+            display: inline-block;
+            margin-top: 12px;
+            margin-right: 8px;
+            padding: 10px 16px;
+            background: var(--accent);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            border: 2px solid var(--accent);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .term-card a::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.5s, height 0.5s;
+        }
+
+        .term-card a:hover {
+            background: var(--accent-light);
+            border-color: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(233, 69, 96, 0.2);
+        }
+
+        .term-card a:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 25px;
+                gap: 30px;
+            }
+
+            .intro-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .intro-text .grade {
+                font-size: 1rem;
+            }
+
+            .term-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+            }
+
+            .works-button {
+                font-size: 1.1rem;
+                padding: 20px 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 20px 15px;
+            }
+
+            .profile-header {
+                padding: 30px 20px;
+            }
+
+            .profile-img {
+                width: 160px;
+                height: 160px;
+                border-radius: 12px;
+            }
+
+            .intro-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .term-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .term-card {
+                padding: 20px;
+            }
+
+            .term-card h3 {
+                font-size: 1.2rem;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header class="profile-header">
+        <img src="ID.jpg" alt="My Profile Picture" class="profile-img">
+        
+        <div class="intro-text">
+            <h1>Name: Angel John Danao</h1>
+            <p class="grade">BS Information Technology</p>
+        </div>
+    </header>
+
+    <div class="works-dropdown">
+        <button class="works-button" onclick="toggleWorks()">View My Coursework ↓</button>
+        
+        <div id="worksContent" class="content">
+            <div class="term-grid">
+                <div class="term-card">
+                    <h3>Lectures</h3>
+                    <a href="Lect 1.html" style="display: inline-block; margin-top: 15px; padding: 10px 15px; background: var(--accent); color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">Lecture 1</a>
+
+                    <a href="Lect 2.html" style="display: inline-block; margin-top: 15px; padding: 10px 15px; background: var(--accent); color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">Lecture 2</a>
+                    
+                    <a href="Lect 3.html" style="display: inline-block; margin-top: 15px; padding: 10px 15px; background: var(--accent); color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">Lecture 3</a>
+
+                    <a href="Lect 4.html" style="display: inline-block; margin-top: 15px; padding: 10px 15px; background: var(--accent); color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">Lecture 4</a>
+                    
+                    <a href="Lect 5.html" style="display: inline-block; margin-top: 15px; padding: 10px 15px; background: var(--accent); color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">Lecture 5</a>
+                    
+                    <a href="Lect 6.html" style="display: inline-block; margin-top: 15px; padding: 10px 15px; background: var(--accent); color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">Lecture 6</a>
+                    
+                    <a href="Lect 7.html" style="display: inline-block; margin-top: 15px; padding: 10px 15px; background: var(--accent); color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">Lecture 7</a>
+
+                </div>
+                
+                <div class="term-card">
+                    <h3>Prelim</h3>
+                    
+                    <a href="PrelimAct2.html" style="display: inline-block; margin-top: 15px; padding: 10px 15px; background: var(--accent); color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">Prelim Activity 2</a>
+                                        
+                    <a href="" style="display: inline-block; margin-top: 15px; padding: 10px 15px; background: var(--accent); color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">Quiz 1</a>
+
+                    <a href="Kitchen.html" style="display: inline-block; margin-top: 15px; padding: 10px 15px; background: var(--accent); color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">Prelim EXAM </a>
+               
+                </div>
+                
+                <div class="term-card">
+                    <h3>Midterm</h3>
+                    
+                    <a href="Act 2.html" style="display: inline-block; margin-top: 15px; padding: 10px 15px; background: var(--accent); color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">Activity 2</a>
+
+                    <a href="Act3.html" style="display: inline-block; margin-top: 15px; padding: 10px 15px; background: var(--accent); color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">Activity 3</a>
+        
+                    <a href="MidExam Individual.html" style="display: inline-block; margin-top: 15px; padding: 10px 15px; background: var(--accent); color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">Midterm Exam (Individual)</a>
+               
+                    <a href="MidExam.html" style="display: inline-block; margin-top: 15px; padding: 10px 15px; background: var(--accent); color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">Midterm Exam (Group) </a>
+
+                </div>
+                
+                <div class="term-card">
+                    <h3>Finals</h3>
+                    
+                    <a href="FinAct2.html" style="display: inline-block; margin-top: 15px; padding: 10px 15px; background: var(--accent); color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">Final Activity 2</a>
+
+                    <a href="Web/index.html" style="display: inline-block; margin-top: 15px; padding: 10px 15px; background: var(--accent); color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">Final Project </a>
+               
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleWorks() {
+        const content = document.getElementById('worksContent');
+        content.classList.toggle('active');
+        
+        const button = document.querySelector('.works-button');
+        if (content.classList.contains('active')) {
+            button.innerText = 'Hide My Coursework ↑';
+        } else {
+            button.innerText = 'View My Coursework ↓';
+        }
+    }
+</script>
+
+</body>
+</html>

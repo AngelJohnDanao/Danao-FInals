@@ -1,0 +1,24 @@
+    <style>
+        .sampleDiv {
+        text-align: center;
+    }
+    p {
+            text-align: center;
+            color: #27e700;
+        }
+
+        #para1{
+    text-align: center;
+    color: blue;
+    }
+    .center{
+        text-align:right;
+        color: #c47bfe;
+    }
+    h3, h1,p{
+        text-align: center;
+        color: #624a76;
+        text-justify: ;
+        background-color: bisque;
+    }
+    </style>

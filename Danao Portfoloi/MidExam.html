@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12 Chinese Zodiacs</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function navigateToSection(select) {
+            const value = select.value;
+            if (value) window.location.hash = value;
+            select.value = "";
+        }
+    </script>
+</head>
+<body>
+<span id="start"></span>
+
+<header class="page-header">
+    <h1>Chinese Zodiac Signs · 生肖</h1>
+</header>
+
+<nav class="nav-dropdown">
+    <label for="zodiacNav">Jump to section:</label>
+    <select id="zodiacNav" onchange="navigateToSection(this)">
+        <option value="" disabled selected>— Select a section —</option>
+        <option value="intro">The 12 Animals · 60‑Year Cycle</option>
+        <option value="five-elements">Five Elements & Traits</option>
+        <optgroup label="12 Zodiac Animals">
+            <option value="rat">Rat (鼠)</option>
+            <option value="ox">Ox (牛)</option>
+            <option value="tiger">Tiger (虎)</option>
+            <option value="rabbit">Rabbit (兔)</option>
+            <option value="dragon">Dragon (龙)</option>
+            <option value="snake">Snake (蛇)</option>
+            <option value="horse">Horse (马)</option>
+            <option value="goat">Goat (羊)</option>
+            <option value="monkey">Monkey (猴)</option>
+            <option value="rooster">Rooster (鸡)</option>
+            <option value="dog">Dog (狗)</option>
+            <option value="pig">Pig (猪)</option>
+        </optgroup>
+    </select>
+</nav>
+
+<main>
+    <section id="intro" class="intro">
+        <h2>The 12 Animals · 60‑Year Cycle</h2>
+        <div class="intro-image">
+            <img src="12 zodiacs.jpg" alt="Chinese zodiacs image" class="banner-img">
+        </div>
+        <p>The Chinese Zodiac is a sophisticated system that blends the 12 animal signs with the Five Elements to create a unique 60‑year cycle. 
+            Your personality is shaped not only by the animal of your birth year but also by whether that year was influenced by Wood, Fire, Earth, Metal, or Water. 
+            For example, a "Water Tiger" is seen as more sensitive and intuitive than the assertive and ambitious "Metal Tiger." 
+            This complex interplay ensures that even people born under the same animal sign can have vastly different temperaments and life paths.</p>
+        <p>Beyond individual traits, the Shengxiao serves as a vital cultural guide for determining interpersonal compatibility and timing major life events. 
+            Many people consult the zodiac to find ideal partners, as certain animal pairings like the Pig and the Tiger are believed to bring natural harmony and prosperity. 
+            Additionally, specific years are viewed as more auspicious for starting businesses or having children, deeply influencing social trends across generations. 
+            This ancient tradition remains a powerful tool for understanding one's place within the natural and social world.</p>
+
+        <h2>History & Origins · 历史</h2>
+        <p>The Chinese zodiac, known as <strong>Shēngxiào</strong> (生肖), formally developed during the <strong>Han Dynasty</strong> (206 BCE–220 CE), though its roots trace back to the 
+            Warring States period (475–221 BCE). Archaeological discoveries at <strong>Yunmeng Shuihudi</strong> and <strong>Tianshui Fangmatan</strong> (c. 300–220 BCE) contain the earliest 
+            complete lists of zodiac animals, confirming the system existed before imperial unification. The custom of pairing animals with years can be traced back to at least the Han dynasty, 
+            with many legends and folktales surrounding the 12 zodiac animals depicted in East Asian art.</p>
+        <p>According to legend, the <strong>Jade Emperor</strong> invited all animals to a race across a river. The order of arrival determined their place in the cycle: 
+            the clever Rat hitched a ride on the Ox, jumping ahead at the last moment; the Dragon delayed to bring rain to villages; the Dog stopped to bathe; and the Pig paused to eat. 
+            The Cat was tricked by the Rat and missed the race entirely—explaining why cats are absent from the zodiac. An alternative theory suggests the order was based on animals' toes/hooves, 
+            alternating between even and odd numbers—the Rat was first because it has four toes on front legs and five on rear, combining both even and odd.</p>
+        <p>The twelve animals correspond to the <strong>Earthly Branches</strong> (地支), a duodecimal system used for timekeeping since the Shang Dynasty (1600–1046 BCE). 
+            Ancient Chinese scholars matched these branches with animals to make them easier to remember, creating the symbolic system still used today across East Asia. 
+            The use of animals to mark years spread throughout East and Central Asia, with local adaptations—Vietnam uses a water buffalo instead of ox and cat instead of rabbit; 
+            Turkic peoples replaced tiger with leopard, pig with elephant, and rat with camel.</p>
+        <p class="back-link"><a href="#start">⬆ back to top</a></p>
+    </section>
+
+    <section id="five-elements" class="elements">
+    <h2>The Five Elements & Their Traits</h2>
+    <div class="element-img">
+        <img src="elements.webp" alt="five elements image" class="banner-img">
+    </div>
+    
+    <h2>History & Philosophy · 五行</h2>
+    <p style="margin-bottom: 1rem;">The theory of the Five Elements, known as <strong>Wu Xing</strong> (五行) in Chinese, originated during the <strong>Warring States period</strong> 
+        (475–221 BCE) and was fully developed by the <strong>Han Dynasty</strong> (206 BCE–220 CE). Unlike the Greek four-element system, 
+        Wu Xing describes five dynamic "phases" or "movements"—Wood, Fire, Earth, Metal, and Water—that constantly interact, transform, and influence all aspects of life.
+        This philosophy became fundamental to traditional Chinese culture, extending far beyond astrology into 
+        <strong>medicine, music, military strategy, feng shui, and martial arts</strong>. 
+        The five elements are associated with everything from seasons and directions to colors, organs, and emotions.</p>
+    
+    <h2>The Cycle of Balance</h2>
+    <p>The elements follow two complementary cycles that maintain harmony in the universe :</p>
+
+    <div class="cycle-container">
+        <div class="cycle-card">
+            <p><span class="element-label"><strong>Generative Cycle (Sheng):</strong></span>
+            Wood feeds Fire → Fire creates Earth (ash) → Earth bears Metal → Metal carries Water → Water nourishes Wood</p>
+        </div>
+        <div class="cycle-card">
+            <p><span class="element-label"><strong>Controlling Cycle (Ke):</strong></span>
+            Wood breaks Earth → Earth absorbs Water → Water quenches Fire → Fire melts Metal → Metal chops Wood</p>
+        </div>
+    </div>
+    
+    <h2>The Five Elements</h2>
+    <p>Your specific element is determined by the last digit of your birth year. This element combines with your zodiac animal to create the 60-year cycle.</p>
+    
+    <ul class="element-list">
+        <li><span class="element-label">Metal<br>(years ending in 0 or 1)</span> 
+            Associated with autumn, white, and the planet Venus. Represents strength, focus, and determination. 
+            These "driven organizers" are disciplined, goal-oriented, and value structure—but can become rigid or judgmental. 
+            Metal finds balance through Water and is tempered by Fire.</li>
+        <li><span class="element-label">Water<br>(years ending in 2 or 3)</span> 
+            Associated with winter, black, and the planet Mercury. 
+            Symbolizes wisdom, intuition, and adaptability. 
+            Water types are introspective, empathetic communicators who "go with the flow"—yet may isolate themselves when overwhelmed. 
+            Water is nourished by Metal and controlled by Earth.</li>
+        <li><span class="element-label">Wood<br>(years ending in 4 or 5)</span> 
+            Associated with spring, green, and the planet Jupiter. 
+            Represents growth, creativity, and generosity. 
+            These "grounded visionaries" value community, plan thoughtfully, and foster growth—but can become overly competitive. 
+            Wood feeds Fire and is shaped by Metal.</li>
+        <li><span class="element-label">Fire<br>(years ending in 6 or 7)</span> 
+            Associated with summer, red, and the planet Mars. 
+            Represents passion, energy, and leadership. 
+            Fire types are charismatic thrill-seekers who inspire others—but risk burning out or becoming impulsive. 
+            Fire creates Earth and is controlled by Water.</li>
+        <li><span class="element-label">Earth<br>(years ending in 8 or 9)</span> 
+            Associated with late summer, yellow/brown, and the planet Saturn. 
+            Represents stability, reliability, and practicality. 
+            These "thoughtful mediators" provide balance, nurture others, and remain calm in crises—but may become controlling when unappreciated. 
+            Earth produces Metal and is nourished by Fire.</li>
+    </ul>
+    <p class="back-link"><a href="#start">⬆ Back to top</a></p>
+</section>
+
+    <section class="zodiac-gallery">
+        <h2>The Twelve Animals · 生肖</h2>
+
+        <article id="rat" class="animal-card">
+            <h3>Rat · 鼠 (Zi)</h3>
+            <div class="card-top">
+                <div class="image-wrapper">
+                    <img src="rat.jpg" alt="Rat image" class="animal-img">
+                </div>
+                <div class="card-info">
+                    <p class="years"><strong>Years:</strong> 
+                        <br> 1972, 1984, 1996, 2008, 2020</p>
+                    <p class="personality"><strong>Personality:</strong> 
+                        <br> Quick‑witted, resourceful, versatile, kind. Masters of observation and social charm.</p>
+                    <p class="history"><strong>History:</strong> 
+                        <br> According to the Great Race legend, the Rat hitched a ride on the Ox's back and jumped off at the last moment to claim first place. 
+                        An ancient theory explains the Rat's first position differently—it has four toes on front legs and five on rear, uniquely combining both even and odd numbers, unlike other zodiac animals.</p>
+                </div>
+            </div>
+            <div class="card-details">
+                <div class="list-group">
+                    <ul><strong>Lucky things:</strong> <li>Numbers: 2, 3</li> <li>Colors: Blue, Gold</li> <li>Flower: Lily</li></ul>
+                    <ul><strong>Unlucky things:</strong> <li>Numbers: 5, 9</li> <li>Color: Yellow/Brown</li></ul>
+                    <ul><strong>Compatible with:</strong> <li>Ox, Dragon, Monkey</li></ul>
+                    <ul><strong>Incompatible with:</strong> <li>Horse, Rooster</li></ul>
+                </div>
+                <p class="back-link"><a href="#start">⬆ Back to top</a></p>
+            </div>
+        </article>
+
+        <article id="ox" class="animal-card">
+            <h3>Ox · 牛 (Chou)</h3>
+            <div class="card-top">
+                <div class="image-wrapper">
+                    <img src="ox.jpg" alt="Ox image" class="animal-img">
+                </div>
+                <div class="card-info">
+                    <p class="years"><strong>Years:</strong> 
+                        <br> 1973, 1985, 1997, 2009, 2021</p>
+                    <p class="personality"><strong>Personality:</strong> 
+                        <br> Diligent, dependable, strong, determined. Value hard work, patriotic and ambitious.</p>
+                    <p class="history"><strong>History:</strong> 
+                        <br> The Ox is the second animal, associated with the Earthly Branch chǒu (丑). 
+                        In mythology, the good-natured Ox carried the Rat across the river during the Great Race but was tricked at the finish line. 
+                        Oxen have deep significance in Chinese mythology as agricultural symbols and sacrificial offerings, representing strength and reliability since ancient times.</p>
+                </div>
+            </div>
+            <div class="card-details">
+                <div class="list-group">
+                    <ul><strong>Lucky things:</strong> <li>Numbers: 1, 4</li> <li>Colors: White, Yellow, Green</li> <li>Flower: Peach Blossom</li></ul>
+                    <ul><strong>Unlucky things:</strong> <li>Numbers: 5, 6</li> <li>Color: Blue</li></ul>
+                    <ul><strong>Compatible with:</strong> <li>Rat, Snake, Rooster</li></ul>
+                    <ul><strong>Incompatible with:</strong> <li>Tiger, Dragon, Horse, Goat</li></ul>
+                </div>
+                <p class="back-link"><a href="#start">⬆ Back to top</a></p>
+            </div>
+        </article>
+
+        <article id="tiger" class="animal-card">
+            <h3>Tiger · 虎 (Yin)</h3>
+            <div class="card-top">
+                <div class="image-wrapper">
+                    <img src="tiger.jpg" alt="Tiger image" class="animal-img">
+                </div>
+                <div class="card-info">
+                    <p class="years"><strong>Years:</strong> 
+                        <br> 1974, 1986, 1998, 2010, 2022</p>
+                    <p class="personality"><strong>Personality:</strong> 
+                        <br> Brave, confident, competitive, unpredictable. Natural leaders who command respect.</p>
+                    <p class="history"><strong>History:</strong> 
+                        <br> The Tiger is the third zodiac animal, associated with the Earthly Branch yin (寅). 
+                        In Central Asian Turkic versions of the zodiac, the tiger was replaced with leopard to reflect local wildlife. 
+                        The Tiger represents the west and autumn in Chinese cosmology, and its image has been used since ancient times to ward off evil spirits.</p>
+                </div>
+            </div>
+            <div class="card-details">
+                <div class="list-group">
+                    <ul><strong>Lucky things:</strong> <li>Numbers: 1, 3, 4</li> <li>Colors: Blue, Grey, Orange</li> <li>Flower: Cineraria</li></ul>
+                    <ul><strong>Unlucky things:</strong> <li>Numbers: 6, 7, 8</li> <li>Color: Brown</li></ul>
+                    <ul><strong>Compatible with:</strong> <li>Horse, Dog, Pig</li></ul>
+                    <ul><strong>Incompatible with:</strong> <li>Ox, Snake, Monkey</li></ul>
+                </div>
+                <p class="back-link"><a href="#start">⬆ Back to top</a></p>
+            </div>
+        </article>
+
+        <article id="rabbit" class="animal-card">
+            <h3>Rabbit · 兔 (Mao)</h3>
+            <div class="card-top">
+                <div class="image-wrapper">
+                    <img src="rabbit.jpg" alt="Rabbit image" class="animal-img">
+                </div>
+                <div class="card-info">
+                    <p class="years"><strong>Years:</strong> 
+                        <br> 1975, 1987, 1999, 2011, 2023</p>
+                    <p class="personality"><strong>Personality:</strong>
+                        <br> Quiet, elegant, kind, responsible. Artistic with a keen eye for detail.</p>
+                    <p class="history"><strong>History:</strong>
+                        <br> The Rabbit is the fourth animal, associated with the Earthly Branch mǎo (卯). 
+                        Historically, rabbits were not native to China—they were introduced in the 16th century. 
+                        The original zodiac animal was the hare, which is why in Vietnamese zodiac, the cat takes the place of the rabbit/hare.</p>
+                </div>
+            </div>
+            <div class="card-details">
+                <div class="list-group">
+                    <ul><strong>Lucky things:</strong> <li>Numbers: 3, 4, 6</li> <li>Colors: Pink, Red, Purple</li> <li>Flower: Jasmine</li></ul>
+                    <ul><strong>Unlucky things:</strong> <li>Numbers: 1, 7, 8</li> <li>Color: Dark Brown</li></ul>
+                    <ul><strong>Compatible with:</strong> <li>Goat, Dog, Pig</li></ul>
+                    <ul><strong>Incompatible with:</strong> <li>Rat, Rooster</li></ul>
+                </div>
+                <p class="back-link"><a href="#start">⬆ Back to top</a></p>
+            </div>
+        </article>
+
+        <article id="dragon" class="animal-card">
+            <h3>Dragon · 龙 (Chen)</h3>
+            <div class="card-top">
+                <div class="image-wrapper">
+                    <img src="dragon.jpg" alt="Dragon image" class="animal-img">
+                </div>
+                <div class="card-info">
+                    <p class="years"><strong>Years:</strong> 
+                        <br> 1976, 1988, 2000, 2012, 2024</p>
+                    <p class="personality"><strong>Personality:</strong> 
+                        <br> Confident, intelligent, enthusiastic. As the only mythical creature, Dragons are seen as powerful and gifted.</p>
+                    <p class="history"><strong>History:</strong> 
+                        <br> The Dragon is the fifth animal, the only mythical creature in the zodiac. 
+                        In the Great Race legend, the Dragon could have won but stopped to bring rain to villages, demonstrating benevolence. 
+                        The Dragon is deeply tied to Chinese imperial symbolism and represents yang masculinity, power, and good fortune.</p>
+                </div>
+            </div>
+            <div class="card-details">
+                <div class="list-group">
+                    <ul><strong>Lucky things:</strong> <li>Numbers: 1, 6, 7</li> <li>Colors: Gold, Silver</li> <li>Flower: Bleeding Heart</li></ul>
+                    <ul><strong>Unlucky things:</strong> <li>Numbers: 3, 8</li> <li>Color: Blue/Green</li></ul>
+                    <ul><strong>Compatible with:</strong> <li>Rat, Monkey, Rooster</li></ul>
+                    <ul><strong>Incompatible with:</strong> <li>Dog, Rabbit</li></ul>
+                </div>
+                <p class="back-link"><a href="#start">⬆ Back to top</a></p>
+            </div>
+        </article>
+
+        <article id="snake" class="animal-card">
+            <h3>Snake · 蛇 (Si)</h3>
+            <div class="card-top">
+                <div class="image-wrapper">
+                    <img src="snake.jpg" alt="Snake image" class="animal-img">
+                </div>
+                <div class="card-info">
+                    <p class="years"><strong>Years:</strong> 
+                        <br> 1977, 1989, 2001, 2013, 2025</p>
+                    <p class="personality"><strong>Personality:</strong> 
+                        <br> Enigmatic, intelligent, wise. They are private and rely on their own judgment.</p>
+                    <p class="history"><strong>History:</strong> 
+                        <br> The Snake is the sixth animal, called "小龙" (little dragon) in ancient texts. 
+                        In Chinese mythology, human ancestors Fuxi and Nüwa were depicted as蛇身人首 (snake-bodied, human-headed). 
+                        Snake ranks sixth because it lacks legs, and zero was considered even in the toe-counting system. 
+                        In Taoism, the Snake is paired with the Tortoise as Xuanwu, the Dark Warrior.</p>
+                </div>
+            </div>
+            <div class="card-details">
+                <div class="list-group">
+                    <ul><strong>Lucky things:</strong> <li>Numbers: 2, 8, 9</li> <li>Colors: Black, Red, Yellow</li> <li>Flower: Orchid</li></ul>
+                    <ul><strong>Unlucky things:</strong> <li>Numbers: 1, 6, 7</li> <li>Color: White/Gold</li></ul>
+                    <ul><strong>Compatible with:</strong> <li>Dragon, Rooster</li></ul>
+                    <ul><strong>Incompatible with:</strong> <li>Tiger, Rabbit, Goat, Pig</li></ul>
+                </div>
+                <p class="back-link"><a href="#start">⬆ Back to top</a></p>
+            </div>
+        </article>
+
+        <article id="horse" class="animal-card">
+            <h3>Horse · 马 (Wu)</h3>
+            <div class="card-top">
+                <div class="image-wrapper">
+                    <img src="horse.jpg" alt="Horse image" class="animal-img">
+                </div>
+                <div class="card-info">
+                    <p class="years"><strong>Years:</strong> 
+                        <br> 1978, 1990, 2002, 2014, 2026</p>
+                    <p class="personality"><strong>Personality:</strong> 
+                        <br> Animated, active, energetic. Loves attention and craves independence.</p>
+                    <p class="history"><strong>History:</strong> 
+                        <br> The Horse is the seventh animal, associated with the Earthly Branch wǔ (午). 
+                        The lunar calendar that determines the zodiac can be traced back to the 14th century BCE. 
+                        Myths say Emperor Huangdi invented the calendar in 2637 BCE. 
+                        The Horse has a long tradition in Chinese mythology and is one of the six domestic animals (liuchu) essential to human life.</p>
+                </div>
+            </div>
+            <div class="card-details">
+                <div class="list-group">
+                    <ul><strong>Lucky things:</strong> <li>Numbers: 2, 3, 7</li> <li>Colors: Yellow, Green</li> <li>Flower: Calla Lily</li></ul>
+                    <ul><strong>Unlucky things:</strong> <li>Numbers: 1, 5, 6</li> <li>Color: Blue/White</li></ul>
+                    <ul><strong>Compatible with:</strong> <li>Tiger, Goat, Dog</li></ul>
+                    <ul><strong>Incompatible with:</strong> <li>Rat, Ox</li></ul>
+                </div>
+                <p class="back-link"><a href="#start">⬆ Back to top</a></p>
+            </div>
+        </article>
+
+        <article id="goat" class="animal-card">
+            <h3>Goat · 羊 (Wei)</h3>
+            <div class="card-top">
+                <div class="image-wrapper">
+                    <img src="goat.jpg" alt="Goat image" class="animal-img">
+                </div>
+                <div class="card-info">
+                    <p class="years"><strong>Years:</strong> 
+                        <br> 1979, 1991, 2003, 2015, 2027</p>
+                    <p class="personality"><strong>Personality:</strong> 
+                        <br> Gentle, shy, stable, sympathetic. Strong sense of kindness and justice.</p>
+                    <p class="history"><strong>History:</strong> 
+                        <br> The Goat is the eighth animal, but its English translation causes confusion because the 
+                        Chinese character 羊 (yáng) can refer to either sheep or goat. Archaeological evidence shows both species have been domesticated 
+                        in China since prehistoric times. Folklorists suggest goats are more likely the original zodiac animal, as they were more common 
+                        among Han Chinese farmers.</p>
+                </div>
+            </div>
+            <div class="card-details">
+                <div class="list-group">
+                    <ul><strong>Lucky things:</strong> <li>Numbers: 2, 7</li> <li>Colors: Green, Red, Purple</li> <li>Flower: Carnation</li></ul>
+                    <ul><strong>Unlucky things:</strong> <li>Numbers: 4, 9</li> <li>Color: Gold/Coffee</li></ul>
+                    <ul><strong>Compatible with:</strong> <li>Rabbit, Horse, Pig</li></ul>
+                    <ul><strong>Incompatible with:</strong> <li>Ox, Dragon, Snake, Dog</li></ul>
+                </div>
+                <p class="back-link"><a href="#start">⬆ Back to top</a></p>
+            </div>
+        </article>
+
+        <article id="monkey" class="animal-card">
+            <h3>Monkey · 猴 (Shen)</h3>
+            <div class="card-top">
+                <div class="image-wrapper">
+                    <img src="monkey.jpg" alt="Monkey image" class="animal-img">
+                </div>
+                <div class="card-info">
+                    <p class="years"><strong>Years:</strong> 
+                        <br> 1980, 1992, 2004, 2016, 2028</p>
+                    <p class="personality"><strong>Personality:</strong> 
+                        <br> Sharp, smart, curious. Mischievous practical jokesters and problem‑solvers.</p>
+                    <p class="history"><strong>History:</strong> 
+                        <br> The Monkey is the ninth animal, associated with the Earthly Branch shēn (申). 
+                        Tibetan mythology considers the monkey as the ancestor of the Tibetan people. The character "申" resembles a monkey in ancient oracle bone script. 
+                        The Monkey King from "Journey to the West" became a protective deity worshipped by people seeking health and success.</p>
+                </div>
+            </div>
+            <div class="card-details">
+                <div class="list-group">
+                    <ul><strong>Lucky things:</strong> <li>Numbers: 4, 9</li> <li>Colors: White, Gold, Blue</li> <li>Flower: Chrysanthemum</li></ul>
+                    <ul><strong>Unlucky things:</strong> <li>Numbers: 2, 7</li> <li>Color: Red/Pink</li></ul>
+                    <ul><strong>Compatible with:</strong> <li>Rat, Dragon</li></ul>
+                    <ul><strong>Incompatible with:</strong> <li>Tiger, Pig</li></ul>
+                </div>
+                <p class="back-link"><a href="#start">⬆ Back to top</a></p>
+            </div>
+        </article>
+
+        <article id="rooster" class="animal-card">
+            <h3>Rooster · 鸡 (You)</h3>
+            <div class="card-top">
+                <div class="image-wrapper">
+                    <img src="rooster.jpg" alt="Rooster image" class="animal-img">
+                </div>
+                <div class="card-info">
+                    <p class="years"><strong>Years:</strong> 
+                        <br> 1981, 1993, 2005, 2017, 2029</p>
+                    <p class="personality"><strong>Personality:</strong> 
+                        <br> Observant, hardworking, courageous, talented. Confident, but are prone to boasting.</p>
+                    <p class="history"><strong>History:</strong> 
+                        <br> The Rooster is the tenth animal, one of the six domestic animals (六畜) recorded in Chinese classics 
+                        alongside horse, ox, sheep, dog, and pig. Archaeological finds date rooster domestication to prehistoric times. Legend tells of a heavenly 
+                        rooster living on Taodu Mountain that crows when the sun first touches the peach tree, awakening the world.</p>
+                </div>
+            </div>
+            <div class="card-details">
+                <div class="list-group">
+                    <ul><strong>Lucky things:</strong> <li>Numbers: 5, 7, 8</li> <li>Colors: Gold, Brown, Yellow</li> <li>Flower: Gladiola</li></ul>
+                    <ul><strong>Unlucky things:</strong> <li>Numbers: 1, 3, 9</li> <li>Color: Red</li></ul>
+                    <ul><strong>Compatible with:</strong> <li>Ox, Dragon, Snake</li></ul>
+                    <ul><strong>Incompatible with:</strong> <li>Rat, Rabbit, Dog</li></ul>
+                </div>
+                <p class="back-link"><a href="#start">⬆ Back to top</a></p>
+            </div>
+        </article>
+
+        <article id="dog" class="animal-card">
+            <h3>Dog · 狗 (Xu)</h3>
+            <div class="card-top">
+                <div class="image-wrapper">
+                    <img src="dog.jpg" alt="Dog image" class="animal-img">
+                </div>
+                <div class="card-info">
+                    <p class="years"><strong>Years:</strong> 
+                        <br> 1982, 1994, 2006, 2018, 2030</p>
+                    <p class="personality"><strong>Personality:</strong> 
+                        <br> Loyal, honest, amiable, kind. They are cautious by nature and will do anything for the people they love.</p>
+                    <p class="history"><strong>History:</strong> 
+                        <br> The Dog is the eleventh animal, associated with Earthly Branch xū (戌). Early Qin dynasty bamboo texts from 
+                        Shuihudi show a different zodiac where deer appeared instead of dogs. The Panhu legend tells of a dog who married a princess and fathered twelve children, 
+                        making him the ancestor of some southern ethnic groups.</p>
+                </div>
+            </div>
+            <div class="card-details">
+                <div class="list-group">
+                    <ul><strong>Lucky things:</strong> <li>Numbers: 3, 4, 9</li> <li>Colors: Red, Green, Purple</li> <li>Flower: Rose</li></ul>
+                    <ul><strong>Unlucky things:</strong> <li>Numbers: 1, 6, 7</li> <li>Color: Blue/White</li></ul>
+                    <ul><strong>Compatible with:</strong> <li>Tiger, Rabbit, Horse</li></ul>
+                    <ul><strong>Incompatible with:</strong> <li>Ox, Dragon, Goat, Rooster</li></ul>
+                </div>
+                <p class="back-link"><a href="#start">⬆ Back to top</a></p>
+            </div>
+        </article>
+
+        <article id="pig" class="animal-card">
+            <h3>Pig · 猪 (Hai)</h3>
+            <div class="card-top">
+                <div class="image-wrapper">
+                    <img src="pig.jpg" alt="Pig image" class="animal-img">
+                </div>
+                <div class="card-info">
+                    <p class="years"><strong>Years:</strong> 
+                        <br> 1983, 1995, 2007, 2019, 2031</p>
+                    <p class="personality"><strong>Personality:</strong> 
+                        <br> Compassionate, generous, diligent. Realistic and focuses on enjoying small luxuries.</p>
+                    <p class="history"><strong>History:</strong> 
+                        <br> The Pig is the twelfth animal, associated with the Earthly Branch hài (亥). In the Great Race 
+                        legend, the Pig stopped to eat and fell asleep, arriving last. In Japanese and Tibetan zodiac, the Pig is replaced by the boar; in Dai 
+                        zodiac, by the elephant. The character "亥" in oracle bone script resembles a pig, showing ancient connection.</p>
+                </div>
+            </div>
+            <div class="card-details">
+                <div class="list-group">
+                    <ul><strong>Lucky things:</strong> 
+                        <li>Numbers: 2, 5, 8</li> 
+                        <li>Colors: Yellow, Grey, Brown</li> 
+                        <li>Flower: Daisy</li>
+                    </ul>
+                    <ul><strong>Unlucky things:</strong> 
+                        <li>Numbers: 1, 7</li> 
+                        <li>Color: Blue/Green</li>
+                    </ul>
+                    <ul><strong>Compatible with:</strong> 
+                        <li>Tiger, Rabbit, Goat</li>
+                    </ul>
+                    <ul><strong>Incompatible with:</strong> 
+                        <li>Snake, Monkey</li>
+                    </ul>
+                </div>
+                <p class="back-link"><a href="#start">⬆ Back to top</a></p>
+            </div>
+        </article>
+    </section>
+</main>
+<footer>
+    <p class="footer-to-top"><a href="#start">⬆ Back to top</a></p>
+    <p class="footer-credits">
+        <strong>Image credits:</strong> Each zodiac sign images are from <a href="https://en.wikipedia.org/wiki/Chinese_zodiac" target="_blank">Wikipedia</a> (dragon zodiac image edited by Majarucon), 
+        The 12 Animals image is from <a href="https://www.connectmandarin.com/blog-details-chinese-zodiac-culture" target="_blank">Connect Mandarin</a>, 
+        and the 5 Elements & Traits is from <a href="https://www.chinahighlights.com/travelguide/chinese-zodiac/china-five-elements-philosophy.htm" target="_blank">China Highlights</a>.
+    </p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS3 Part 1 Notes</title>
+
+    <style>
+        /* CSS SYNTAX & SELECTORS
+        - Rule-set: Consists of a selector and a declaration block.
+        - Selector: Points to the HTML element you want to style.
+        - Declaration: Property and Value separated by a colon, ending with a semicolon.
+        - Declaration blocks are surrounded by curly braces {}.
+        */
+
+        /* ELEMENT SELECTOR: Selects elements based on the name */
+        p {
+            text-align: center;
+            color: red;
+        }
+
+        /* ID SELECTOR: Selects one unique element using #idName. Highest priority. */
+        #para1 {
+            text-align: center;
+            color: blue;
+        }
+
+        /* CLASS SELECTOR: Selects elements with a specific class using .className. Can be reused. */
+        .center {
+            text-align: right;
+            color: red;
+        }
+
+        /* GROUPING SELECTORS: Applies the same style to multiple selectors separated by commas. */
+        h1, h2, span {
+            text-align: center;
+            color: red;
+        }
+
+        /* INTERNAL STYLE SHEET
+        - Defined within <style> tags inside the <head> section.
+        - Used if a single page has a unique style.
+        */
+        body {
+            background-color: linen;
+        }
+
+        /* BORDER PROPERTIES */
+        /* Individual side styling */
+        .border-custom {
+            border-top-style: dotted;
+            border-right-style: solid;
+            border-bottom-style: dotted;
+            border-left-style: solid;
+        }
+
+        /* BORDER SHORTHAND: width | style (required) | color */
+        .border-shorthand {
+            border: 5px solid red;
+            border-radius: 5px; /* Rounded Borders */
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="color:blue; margin-left:30px;">This is a heading with Inline Style</h1>
+
+    <p id="para1">This paragraph is styled using an ID selector.</p>
+
+    <h2 class="center">This heading uses a class selector.</h2>
+
+    <div style="background-color: rgba(255, 0, 0, 0.5); border: 2px solid DodgerBlue;">
+        This box uses RGBA for transparency and a solid border color.
+    </div>
+
+    <div style="background: #ffffff url('img_tree.png') no-repeat right top; height: 100px;">
+        Background shorthand example.
+    </div>
+
+    <div style="width: 50%; max-width: 300px; height: 50px; background-color: lightgrey;">
+        Box with max-width.
+    </div>
+
+    </body>
+</html>
